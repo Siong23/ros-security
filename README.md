@@ -65,6 +65,53 @@ As autonomous systems become increasingly prevalent across sectors such as healt
 - Attack scenario documentation
   💡 The dataset includes traffic from both normal operations and crafted attack scenarios in ROS environments.
 
+## Project Structure
+```
+ros-guard/
+├── README.md                  # Project overview and documentation
+├── LICENSE                    # License file (e.g., MIT)
+├── .gitignore                 # Git ignore rules
+├── requirements.txt           # Python dependencies
+├── CONTRIBUTING.md            # Contribution guidelines
+├── setup.py                   # Optional: if packaging as a Python module
+│
+├── data/                      # Dataset folder
+│   ├── raw/                   # Raw PCAP files or ROS bag files
+│   ├── processed/             # Extracted and labeled CSVs
+│   └── docs/                  # Description of attack scenarios and data labels
+│
+├── models/                    # Trained models, checkpoints, and configs
+│   ├── trained_model.pkl      # Example serialized model
+│   └── baseline_comparisons/  # Benchmarks from different algorithms
+│
+├── notebooks/                 # Jupyter notebooks for EDA, training, visualizations
+│   ├── eda.ipynb
+│   └── model_evaluation.ipynb
+│
+├── scripts/                   # Python scripts
+│   ├── capture_traffic.py     # Tool to capture network traffic (or manual tcpdump)
+│   ├── extract_features.py    # Feature extraction from PCAP files
+│   ├── train_model.py         # ML model training pipeline
+│   ├── detect_intrusions.py   # Real-time intrusion detection tool
+│   └── utils.py               # Shared utilities (e.g., parsing, logging)
+│
+├── config/                    # Config files (YAML/JSON)
+│   └── model_config.yaml
+│
+├── tests/                     # Unit tests
+│   ├── test_feature_extraction.py
+│   └── test_model_inference.py
+│
+├── ros/                       # ROS-specific tools (optional)
+│   ├── launch/                # Launch files for test robots
+│   ├── scripts/               # ROS nodes or plugins (e.g., traffic generator)
+│   └── msg/                   # Custom ROS messages (if needed)
+│
+└── docs/                      # Documentation and diagrams
+    ├── architecture.png       # Architecture diagram
+    └── dataset_specs.md       # Dataset design and labelling policy
+```
+
 ## 📦 Installation
 Requirements
 - Python 3.8+
