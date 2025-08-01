@@ -24,3 +24,7 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 | Service Exploitation     | `service_exploitation.py`  | ❌ Failed  | Attempted `/clear_costmap` service flooding     |
 
 > All scripts executed during SLAM operation and teleoperation to assess real-time impact.
+
+# To be done in the future
+-	Attacks not done before, use new attack to get new data
+-	Consider working on ML model for those new attacks
