@@ -21,7 +21,7 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 | Unauthorized Subscriber  | `unauthorized_subscriber.py`| ✅ Working | Eavesdrops data from `/scan` topic              |
 | Topic Flooding           | `topic_flooding.py`        | ⚠️ Partial | Publishes to `/scan` with high frequency        |
 | All-Angle Movement Spam  | `rosallangle.py`           | ✅ Working | Sends data to all linear/angular channels                                                   |
-| Service Exploitation     | `service_exploitation.py`  | ❌ Failed  | Attempted `/clear_costmap` service flooding. [only worked in mapped environment.     |
+| Service Exploitation     | `service_exploitation.py`  | ❌ Failed  | Attempted `/clear_costmap` service flooding. [only worked in mapped environment]     |
 
 > All scripts executed during SLAM operation and teleoperation to assess real-time impact.
 
