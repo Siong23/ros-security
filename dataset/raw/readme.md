@@ -1,0 +1,1 @@
+- Tests are done in 30 minutes?
