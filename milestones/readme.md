@@ -28,3 +28,8 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 # To be done in the future
 -	Attacks not done before, use new attack to get new data
 -	Consider working on ML model for those new attacks
+
+# What have been done in week 3
+- Focused on attak called MITM where it is a message manipulation attack
+- Cleaned the MITM dataset
+- Try to follow Nawfal's code
