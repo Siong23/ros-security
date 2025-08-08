@@ -33,3 +33,4 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 - Focused on attak called MITM where it is a message manipulation attack
 - Cleaned the MITM dataset
 - Try to follow Nawfal's code
+- ROSIDS23 and NavBot25, what do I do with these existing dataset?
