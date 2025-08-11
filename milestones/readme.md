@@ -1,4 +1,4 @@
-# 📍 Month 1 Milestone: System Setup & Attack Simulation (Weeks 1–4)
+# 📍 Month 1 Milestone: System Setup & Attack Simulation (Week 1 – 4)
 
 This milestone focused on setting up a working ROS environment, familiarizing with ROS-based robot operation, and simulating common cyber attacks to generate labeled datasets for IDS training.
 
