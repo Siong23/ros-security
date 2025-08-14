@@ -19,7 +19,7 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 | DoS                      | `ros_dos2.py`              | ✅ Working | Floods `/cmd_vel` with movement commands        |
 | Unauthorized Publisher   | `unauthorized_publisher.py`| ✅ Working | Injects fake control messages                   |
 | Unauthorized Subscriber  | `unauthorized_subscriber.py`| ✅ Working | Eavesdrops data from `/scan` topic              |
-| Topic Flooding           | `topic_flooding.py`        | ⚠️ Partial | Publishes to `/scan` with high frequency        |
+| Topic Flooding           | `topic_flooding.py`        | ✅ Working | Publishes to `/scan` with high frequency        |
 | All-Angle Movement Spam  | `rosallangle.py`           | ✅ Working | Sends data to all linear/angular channels        |
 | Service Exploitation     | `service_exploitation.py`  | ❌ Failed  | Attempted `/clear_costmap` service flooding [only worked in mapped environment]     |
 
@@ -45,3 +45,6 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 # Milestone #2
 - Started my hand on machine learning
 - Understand what the flow features packet means
+
+# Milestone #3
+- 
