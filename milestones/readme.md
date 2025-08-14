@@ -37,7 +37,6 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 
 # What have been done in week 4
 - Recorded 3 attacks
--   
 
 # Milestone #1
 - Try to complete the dataset as much as possible.
@@ -45,4 +44,4 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 
 # Milestone #2
 - Started my hand on machine learning
-- Understand what the packets mean
+- Understand what the flow features packet means
