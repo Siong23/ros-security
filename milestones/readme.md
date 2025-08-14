@@ -35,9 +35,14 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 - Try to follow Nawfal's code
 - ROSIDS23 and NavBot25, what do I do with these existing dataset?
 
+# What have been done in week 4
+- Recorded 3 attacks
+-   
+
 # Milestone #1
 - Try to complete the dataset as much as possible.
 
 
 # Milestone #2
 - Started my hand on machine learning
+- Understand what the packets mean
