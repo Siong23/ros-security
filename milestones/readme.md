@@ -16,7 +16,8 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 
 | Attack Type              | Script                     | Status     | Description                                     |
 |--------------------------|----------------------------|------------|-------------------------------------------------|
-| DoS                      | `ros_dos2.py`              | ✅ Working | Floods `/cmd_vel` with movement commands        |
+| DoS                      | `dos.py`              | ✅ Working | Floods `/cmd_vel` with movement commands        |
+| MitM                      | `mitm.py`              | ✅ Working | xxxxx        |
 | Unauthorized Publisher   | `unauthorized_publisher.py`| ✅ Working | Injects fake control messages                   |
 | Unauthorized Subscriber  | `unauthorized_subscriber.py`| ✅ Working | Eavesdrops data from `/scan` topic              |
 | Topic Flooding           | `topic_flooding.py`        | ✅ Working | Publishes to `/scan` with high frequency        |
