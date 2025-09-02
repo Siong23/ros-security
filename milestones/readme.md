@@ -44,8 +44,9 @@ This milestone focused on setting up a working ROS environment, familiarizing wi
 
 
 # Milestone #2
-- Started my hand on machine learning
-- Understand what the flow features packet means
+- CICFlowMeter working in Ubuntu to see real life incoming traffic
+- Export models created in NavBot25
+- Validating the data of models
 
 # Milestone #3
 - 
