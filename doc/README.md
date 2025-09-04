@@ -11,3 +11,6 @@ This guide explains how to install and run **CICFlowMeter** on Ubuntu for networ
 1. **Update packages**  
    ```bash
    sudo apt update
+2. **Remove old CICFlowMeter (if exist)**
+   ````bash
+   sudo rm -rf CICFlowMeter
