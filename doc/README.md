@@ -40,4 +40,8 @@ This guide explains how to install and run **CICFlowMeter** on Ubuntu for networ
 9. Configure default Java version
     ````bash
     sudo update-alternatives --config java
-> Select Java 8 from the list. 
+> Select Java 8 from the list.
+10. Verify Java version
+    ````bash
+    java -version
+
