@@ -26,8 +26,18 @@ This guide explains how to install and run **CICFlowMeter** on Ubuntu for networ
 6. Install JNetPcap library
    ````bash
    sudo mvn install:install-file \
-   -Dfile=jnetpcap/linux/jnetpcap-1.4.r1425/jnetpcap.jar \
-   -DgroupId=org.jnetpcap \
-   -DartifactId=jnetpcap \
-   -Dversion=1.4.1 \
-   -Dpackaging=jar
+   Dfile=jnetpcap/linux/jnetpcap-1.4.r1425/jnetpcap.jar \
+   DgroupId=org.jnetpcap \
+   DartifactId=jnetpcap \
+   Dversion=1.4.1 \
+   Dpackaging=jar
+7. Give execution permissions
+   ````bash
+   chmod +x gradlew
+8. Install Java 8
+   ````bash
+   sudo apt install -y openjdk-8-jdk
+9. Configure default Java version
+    ````bash
+    sudo update-alternatives --config java
+> Select Java 8 from the list. 
