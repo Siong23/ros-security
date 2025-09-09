@@ -48,6 +48,5 @@ This guide explains how to install and run **CICFlowMeter** on Ubuntu for networ
 11. Run CICFlowMeter
 ````bash
 sudo ./gradlew execute
-
-
+````
 # How to use CICFlowMeter
