@@ -50,3 +50,9 @@ This guide explains how to install and run **CICFlowMeter** on Ubuntu for networ
 sudo ./gradlew execute
 ````
 # How to use CICFlowMeter
+After running the last command, CICFlowMeter's GUI should be running. 
+The alternative way is through CLI, where the command is:
+````bash
+sudo cicflowmeter -i wlp0s20f3 -c /home/jakelcj/output.csv
+````
+sudo cicflowmeter -i <interface> -c <directory of csv file>
