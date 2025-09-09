@@ -55,4 +55,4 @@ The alternative way is through CLI, where the command is:
 ````bash
 sudo cicflowmeter -i wlp0s20f3 -c /home/jakelcj/output.csv
 ````
-sudo cicflowmeter -i <interface> -c <directory of csv file>
+sudo cicflowmeter -i [interface] -c [directory of csv file]
