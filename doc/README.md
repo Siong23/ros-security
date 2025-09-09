@@ -56,3 +56,9 @@ The alternative way is through CLI, where the command is:
 sudo cicflowmeter -i wlp0s20f3 -c /home/jakelcj/output.csv
 ````
 sudo cicflowmeter -i [interface] -c [directory of csv file]
+
+To confirm that it is working:
+````bash
+head -n 5 /home/jakelcj/output.csv
+````
+
