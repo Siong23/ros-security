@@ -175,14 +175,36 @@ ros-security/
    ```
 
 4. **Extract Features and Run Model**
+
+   **Method A: CLI (Real-time)**
    ```bash
-   # Feature extraction using CICFlowMeter (CLI method)
+   # Feature extraction using CICFlowMeter CLI for live traffic
    sudo cicflowmeter -i wlp0s20f3 -c /home/jakelcj/output.csv
    
    # Verify the output CSV file
    head -n 5 /home/jakelcj/output.csv
+   ```
+
+   **Method B: GUI (Offline PCAP Analysis)**
+   ```bash
+   # Launch CICFlowMeter GUI
+   sudo ./gradlew execute
+   ```
    
-   # Run prediction with trained model 
+   **GUI Steps:**
+   1. Click **"Network"** button in the interface
+   2. Press **"Offline"** option 
+   3. **Browse PCAP file**: Click browse button next to "PCAP Dir" and select your `.pcap` file
+   4. **Set Output directory**: Click browse button next to "Output Dir" to choose where the `.csv` file will be saved
+   5. **Configure timeouts**:
+      - Flow Timeout: `120000000`
+      - Activity Timeout: `5000000`
+   6. Press **"OK"** to start feature extraction
+   7. Check the Output directory for the generated CSV file with extracted flow features
+
+   **Run Model Prediction:**
+   ```bash
+   # Run prediction with trained model (works with both methods)
    cd dataset
    python test.py
    ```
@@ -213,9 +235,9 @@ ros-security/
 
 ## ⚙️ How the IDS Operates
 
-The ROS-Guard IDS operates through a streamlined CLI-based workflow using CICFlowMeter for real-time network traffic analysis:
+The ROS-Guard IDS supports both real-time and offline analysis workflows using CICFlowMeter for network traffic feature extraction:
 
-### Real-time Detection Process
+### Real-time Detection Process (CLI Method)
 
 1. **Network Traffic Capture**
    ```bash
@@ -233,7 +255,26 @@ The ROS-Guard IDS operates through a streamlined CLI-based workflow using CICFlo
    head -n 5 /home/jakelcj/output.csv
    ```
 
-4. **ML-based Classification & ROS Integration**
+### Offline Analysis Process (GUI Method)
+
+1. **PCAP File Preparation**
+   - Capture network traffic using `tcpdump` or Wireshark
+   - Save as `.pcap` file for offline analysis
+
+2. **GUI-based Feature Extraction**
+   ```bash
+   # Launch CICFlowMeter GUI
+   sudo ./gradlew execute
+   ```
+   
+   **GUI Workflow:**
+   - Click **Network** → **Offline**
+   - **PCAP Dir**: Browse and select your `.pcap` file
+   - **Output Dir**: Choose destination for extracted `.csv` file  
+   - **Configure timeouts**: Flow Timeout: `120000000`, Activity Timeout: `5000000`
+   - Press **OK** to extract flow features
+
+3. **ML-based Classification & ROS Integration**
    - Processed features are fed into trained Random Forest model
    - Real-time anomaly detection with ~95% accuracy
    - **ROS Node Integration**: `ids_node.py` continuously monitors CSV output
