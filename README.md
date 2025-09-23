@@ -1,6 +1,6 @@
 # 🤖 ROS-Guard: Machine Learning-based Intrusion Detection for Autonomous Robots
 
-� **ROS-Guard** is a research-driven project that develops a real-time, ML-powered **Intrusion Detection System (IDS)** specifically designed for ROS-based autonomous navigation systems. It enables comprehensive cybersecurity protection through network traffic analysis, attack detection, and provides an open-source dataset collected from real robotic systems for the research community.
+🤖 **ROS-Guard** is a research-driven project that develops a real-time, ML-powered **Intrusion Detection System (IDS)** specifically designed for ROS-based autonomous navigation systems. It enables comprehensive cybersecurity protection through network traffic analysis, attack detection, and provides an open-source dataset collected from real robotic systems for the research community.
 
 As autonomous systems become increasingly prevalent across sectors such as healthcare, finance, manufacturing, and smart infrastructure, cybersecurity is emerging as a critical concern. Robotic platforms, particularly those built on the **Robot Operating System (ROS)**, remain under-protected, exposing them to threats like unauthorized access, data tampering, and network-based attacks.
 
@@ -66,12 +66,13 @@ As autonomous systems become increasingly prevalent across sectors such as healt
 
 ---
 
-## � Components
+## 🔧 Components
 
 | Component              | Description                                                    |
 |------------------------|----------------------------------------------------------------|
 | **TurtleBot3**         | Physical robot platform for real-world data collection        |
 | **ROS Noetic**         | Robot Operating System for navigation and communication       |
+| **IDS ROS Node**       | Real-time intrusion detection node (`codes/ids_node.py`)      |
 | **CICFlowMeter**       | Network traffic feature extraction (76 features)             |
 | **scikit-learn**       | Machine learning framework for model training                 |
 | **PCAP Tools**         | Wireshark/tcpdump for network packet capture                  |
@@ -85,6 +86,8 @@ As autonomous systems become increasingly prevalent across sectors such as healt
 ```
 ros-security/
 ├── README.md                    # Project overview and documentation
+├── codes/                       # ROS implementation and runtime scripts
+│   └── ids_node.py             # Real-time IDS ROS node for live detection
 ├── dataset/                     # Dataset and validation tools
 │   ├── datasetvalidation.ipynb # Data preprocessing and validation
 │   ├── test.py                  # Model testing and prediction script
@@ -179,12 +182,21 @@ ros-security/
    # Verify the output CSV file
    head -n 5 /home/jakelcj/output.csv
    
-   # Run prediction with trained model
+   # Run prediction with trained model 
    cd dataset
    python test.py
    ```
+
+5. **Run Real-time IDS with ROS Integration**
+   ```bash
+   # Start the IDS ROS node for live detection
+   rosrun ros_ids ids_node.py
    
-   > **IDS Operation**: The system runs CICFlowMeter through CLI to extract network features in real-time, then processes them through the trained ML models for intrusion detection.
+   # Monitor detection alerts (in another terminal)
+   rostopic echo /ids/alerts
+   ```
+   
+   > **IDS Operation**: The system runs CICFlowMeter through CLI to extract network features in real-time, then processes them through the trained ML models for intrusion detection. The ROS node provides seamless integration with existing robot systems.
 
 ---
 
@@ -221,10 +233,27 @@ The ROS-Guard IDS operates through a streamlined CLI-based workflow using CICFlo
    head -n 5 /home/jakelcj/output.csv
    ```
 
-4. **ML-based Classification**
+4. **ML-based Classification & ROS Integration**
    - Processed features are fed into trained Random Forest model
    - Real-time anomaly detection with ~95% accuracy
-   - Alerts generated for suspicious network behavior
+   - **ROS Node Integration**: `ids_node.py` continuously monitors CSV output
+   - Publishes alerts to `/ids/alerts` topic for ROS ecosystem integration
+   - Logs detection results for analysis and monitoring
+
+### ROS Node Operation
+```bash
+# Run the IDS ROS node for real-time detection
+rosrun ros_ids ids_node.py
+
+# Monitor alerts in another terminal
+rostopic echo /ids/alerts
+```
+
+The IDS node (`codes/ids_node.py`) features:
+- **Continuous monitoring** of CICFlowMeter CSV output at 2Hz
+- **Feature alignment** ensuring compatibility with trained models  
+- **Real-time publishing** of detection results to ROS topics
+- **Comprehensive logging** for forensic analysis
 
 ### Command Reference
 ```bash
