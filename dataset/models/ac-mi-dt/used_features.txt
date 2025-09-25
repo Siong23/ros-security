@@ -1,0 +1,70 @@
+Total features used: 63
+Mutual information threshold: 0.01
+Model type: Decision Tree
+Best hyperparameters: {'max_depth': 14, 'min_samples_split': 2, 'min_samples_leaf': 2, 'criterion': 'entropy'}
+Final accuracy: 0.9998959498478267
+
+Selected features (one per line):
+Dst Port
+Src Port
+Bwd Header Len
+Bwd IAT Tot
+Bwd Pkts/s
+Bwd IAT Mean
+Pkt Len Mean
+Flow Pkts/s
+Pkt Size Avg
+Flow Duration
+Bwd IAT Max
+Pkt Len Std
+Pkt Len Var
+Flow IAT Mean
+TotLen Bwd Pkts
+Subflow Bwd Byts
+Bwd Seg Size Avg
+Bwd Pkt Len Mean
+Flow IAT Max
+Init Bwd Win Byts
+Pkt Len Max
+Flow Byts/s
+Fwd Pkts/s
+Fwd Header Len
+Flow IAT Std
+Bwd IAT Min
+Subflow Bwd Pkts
+Tot Bwd Pkts
+Bwd Pkt Len Max
+Bwd IAT Std
+Flow IAT Min
+Tot Fwd Pkts
+Subflow Fwd Pkts
+Bwd Pkt Len Std
+Bwd Pkt Len Min
+Fwd IAT Mean
+Fwd IAT Tot
+Down/Up Ratio
+Idle Min
+Idle Mean
+Idle Max
+Fwd IAT Min
+Active Max
+Fwd IAT Max
+Active Mean
+Active Min
+SYN Flag Cnt
+ACK Flag Cnt
+Fwd IAT Std
+Fwd Pkt Len Max
+Fwd Pkt Len Mean
+Fwd Seg Size Avg
+Subflow Fwd Byts
+TotLen Fwd Pkts
+PSH Flag Cnt
+Bwd PSH Flags
+Idle Std
+Active Std
+Fwd Act Data Pkts
+Fwd Pkt Len Min
+Fwd Pkt Len Std
+FIN Flag Cnt
+Pkt Len Min
