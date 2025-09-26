@@ -1,0 +1,69 @@
+Total features used: 62
+Mutual information threshold: 0.01
+Model type: K-Nearest Neighbors
+Best hyperparameters: {'n_neighbors': 2, 'weights': 'distance', 'algorithm': 'ball_tree', 'p': 1}
+Final accuracy: 0.9915
+
+Selected features:
+1. Dst Port
+2. Src Port
+3. Bwd Header Len
+4. Bwd IAT Tot
+5. Bwd Pkts/s
+6. Bwd IAT Mean
+7. Flow Pkts/s
+8. Pkt Len Mean
+9. Flow Duration
+10. Pkt Size Avg
+11. Bwd IAT Max
+12. Pkt Len Var
+13. Pkt Len Std
+14. Flow IAT Mean
+15. TotLen Bwd Pkts
+16. Subflow Bwd Byts
+17. Bwd Seg Size Avg
+18. Bwd Pkt Len Mean
+19. Flow IAT Max
+20. Init Bwd Win Byts
+21. Pkt Len Max
+22. Flow Byts/s
+23. Fwd Pkts/s
+24. Fwd Header Len
+25. Flow IAT Std
+26. Bwd IAT Min
+27. Tot Bwd Pkts
+28. Subflow Bwd Pkts
+29. Bwd Pkt Len Max
+30. Bwd IAT Std
+31. Flow IAT Min
+32. Tot Fwd Pkts
+33. Subflow Fwd Pkts
+34. Bwd Pkt Len Std
+35. Bwd Pkt Len Min
+36. Fwd IAT Mean
+37. Fwd IAT Tot
+38. Down/Up Ratio
+39. Idle Min
+40. Idle Mean
+41. Idle Max
+42. Fwd IAT Min
+43. Active Max
+44. Fwd IAT Max
+45. Active Mean
+46. Active Min
+47. SYN Flag Cnt
+48. ACK Flag Cnt
+49. Fwd IAT Std
+50. Fwd Pkt Len Max
+51. Subflow Fwd Byts
+52. Fwd Seg Size Avg
+53. TotLen Fwd Pkts
+54. Fwd Pkt Len Mean
+55. Bwd PSH Flags
+56. PSH Flag Cnt
+57. Idle Std
+58. Active Std
+59. Fwd Act Data Pkts
+60. Fwd Pkt Len Min
+61. Fwd Pkt Len Std
+62. FIN Flag Cnt
