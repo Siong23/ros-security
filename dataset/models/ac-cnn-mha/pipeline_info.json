@@ -1,0 +1,33 @@
+{
+  "attack_mapping": {
+    "Normal": 0,
+    "DoS Attack": 1,
+    "UnauthSub Attack": 2,
+    "SSH Bruteforce": 3,
+    "Pubflood": 4,
+    "Subflood": 5,
+    "Reverse Shell": 6,
+    "Port Scanning Attack": 7
+  },
+  "class_names": [
+    "Normal",
+    "DoS Attack",
+    "UnauthSub Attack",
+    "SSH Bruteforce",
+    "Pubflood",
+    "Subflood",
+    "Reverse Shell",
+    "Port Scanning Attack"
+  ],
+  "num_classes": 8,
+  "original_features": 78,
+  "cnn_mha_features": 64,
+  "pca_components": 16,
+  "final_features": 16,
+  "model_architecture": "CNN+MHA -> PCA -> KNN+RF -> LogisticRegression",
+  "performance": {
+    "cnn_mha_accuracy": 0.9035966992378235,
+    "ml_pipeline_accuracy": 0.9810453662597114
+  },
+  "feature_flow": "78 -> CNN+MHA -> 64 -> PCA -> 16 -> KNN+RF -> 16 -> LR"
+}

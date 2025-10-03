@@ -5,10 +5,10 @@ import pandas as pd
 from joblib import load
 
 CSV_PATH = "/home/jakelcj/output.csv"
-MODEL_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/model.joblib"
-SCALER_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/scaler.joblib"
-FEATURES_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/used_features.txt"
-OUTPUT_LOG_PATH = "/home/jakelcj/ids_output.log"  # Path to the output log file
+MODEL_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/dt/model.joblib"
+SCALER_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/dt/scaler.joblib"
+FEATURES_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/dt/used_features.txt"
+OUTPUT_LOG_PATH = "/home/jakelcj/acmidt-ids_output.log"  # Path to the output log file
 
 def load_pipeline():
     """Load trained model, scaler, and expected features."""

@@ -5,9 +5,9 @@ import pandas as pd
 from joblib import load
 
 CSV_PATH = "/home/jakelcj/output.csv"
-MODEL_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/acmirf-model.joblib"
-SCALER_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/acmirf-scaler.joblib"
-FEATURES_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/acmirf-used_features.txt"
+MODEL_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/rf/acmirf-model.joblib"
+SCALER_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/rf/acmirf-scaler.joblib"
+FEATURES_PATH = "/home/jakelcj/ids_ws/src/ros_ids/models/rf/acmirf-used_features.txt"
 OUTPUT_LOG_PATH = "/home/jakelcj/acmirf-ids_output.log"  # Path to the output log file
 
 def load_pipeline():
