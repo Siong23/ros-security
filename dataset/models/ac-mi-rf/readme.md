@@ -1,6 +1,8 @@
-# AC-MI-RF Model
+# AC-MI-RF Model (Experimental)
 
 ## Random Forest Classifier with Mutual Information Feature Selection
+
+> **Status**: ✅ **Experimental/Research Model** - This model serves as a research baseline. For production IDS deployment, use the deep learning models (AC-CNN-LSTM or AC-CNN-MHA).
 
 ### Model Details:
 - **Algorithm**: Random Forest Classifier  
@@ -59,6 +61,15 @@
 - **Bootstrap**: True (random sampling with replacement)
 
 ### Comparison with Other Models:
-- **vs Decision Tree**: Similar accuracy but more robust due to ensemble approach
+- **vs Deep Learning Models (Primary IDS)**: Lower complexity but less sophisticated feature extraction
+- **vs Decision Tree**: Similar feature selection but more robust due to ensemble approach  
 - **vs k-NN**: Faster prediction time, better interpretability
-- **Attack Detection**: Consistent ~67% attack rate across all models
+- **Attack Detection**: Consistent ~67% attack rate across all traditional ML models
+
+### Recommended Usage:
+- **Research and Analysis**: Baseline comparison for deep learning models
+- **Feature Importance Studies**: Understanding mutual information-based feature selection
+- **Educational Purposes**: Demonstrating traditional ML approaches to cybersecurity
+- **Resource-Constrained Environments**: When deep learning models are not feasible
+
+> **For Production Deployment**: Use AC-CNN-LSTM or AC-CNN-MHA models for better accuracy and real-world performance.

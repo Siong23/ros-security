@@ -1,52 +1,64 @@
-# 📍 Month 1 Milestone: System Setup & Attack Simulation (Week 1 – 4)
+# 🎯 Project Milestones: ROS Security IDS Development
 
-This milestone focused on setting up a working ROS environment, familiarizing with ROS-based robot operation, and simulating common cyber attacks to generate labeled datasets for IDS training.
+This document tracks the completed milestones for the ROS-Guard intrusion detection system project, from initial setup through final model deployment.
 
 ---
 
-## ✅ Key Achievements
+## 🎯 Milestone #1: Dataset Collection & Attack Simulation ✅ **COMPLETED**
 
-### 🤖 ROS Environment Setup
-- Configured **TurtleBot3 (Burger)** using ROS Noetic on Ubuntu.
-- Established stable communication between **Host PC ↔ Robot** over Wi-Fi using:
-  - Correct `ROS_MASTER_URI` and `ROS_HOSTNAME` settings in `.bashrc`.
-- Verified SLAM operation in RViz with live map updates.
+### Achievements:
+- **Complete attack scenario dataset** with 8 attack types
+- **192,213 total samples** from NavBot25 dataset
+- **Real-world robot traffic** capture and labeling
+- **MITM attack implementation** with message manipulation
+- **DoS, Port Scanning, SSH Bruteforce** attack data collection
 
-### 🧪 Attack Scenario Implementation
+---
 
-| Attack Type              | Script                     | Status     | Description                                     |
-|--------------------------|----------------------------|------------|-------------------------------------------------|
-| DoS                      | `dos.py`              | ✅ Working | Floods `/cmd_vel` with movement commands        |
-| MitM                      | `mitm.py`              | ✅ Working | xxxxx        |
-| Unauthorized Publisher   | `unauthorized_publisher.py`| ✅ Working | Injects fake control messages                   |
-| Unauthorized Subscriber  | `unauthorized_subscriber.py`| ✅ Working | Eavesdrops data from `/scan` topic              |
-| Topic Flooding           | `topic_flooding.py`        | ✅ Working | Publishes to `/scan` with high frequency        |
-| All-Angle Movement Spam  | `rosallangle.py`           | ✅ Working | Sends data to all linear/angular channels        |
-| Service Exploitation     | `service_exploitation.py`  | ❌ Failed  | Attempted `/clear_costmap` service flooding [only worked in mapped environment]     |
+## 🤖 Milestone #2: Model Development & Training ✅ **COMPLETED**
 
-> All scripts executed during SLAM operation and teleoperation to assess real-time impact.
+### Primary IDS Models (Production Ready):
+- ✅ **AC-CNN-LSTM**: 98.78% accuracy - Deep learning hybrid approach
+- ✅ **AC-CNN-MHA**: 98.10% accuracy - CNN + Multi-Head Attention with ML pipeline
 
-# To be done in the future
--	Attacks not done before, use new attack to get new data
--	Consider working on ML model for those new attacks
+### Experimental Models (Research Baseline):
+- ✅ **AC-MI-RF**: Random Forest with mutual information feature selection
+- ✅ **AC-MI-KNN**: K-Nearest Neighbors with optimized parameters  
+- ✅ **AC-MI-DT**: Decision Tree with entropy-based splitting
 
-# What have been done in week 3
-- Focused on attak called MITM where it is a message manipulation attack
-- Cleaned the MITM dataset
-- Try to follow Nawfal's code
-- ROSIDS23 and NavBot25, what do I do with these existing dataset?
+---
 
-# What have been done in week 4
-- Recorded 3 attacks
+## 🔧 Milestone #3: Integration, Deployment & Validation ✅ **COMPLETED**
 
-# Milestone #1
-- Try to complete the dataset as much as possible.
+### Technical Implementation:
+- ✅ **CICFlowMeter integration** for real-time feature extraction
+- ✅ **ROS node implementation** (`ids_node.py`) for live detection
+- ✅ **Real-time alerting system** via ROS topics (`/ids/alerts`)
+- ✅ **GUI and CLI workflows** for both offline and online analysis
+- ✅ **Model serialization** with joblib and Keras formats
 
+### Performance Validation:
+- ✅ **Cross-validation testing** across all models
+- ✅ **Feature importance analysis** using mutual information
+- ✅ **Attack detection validation** across 8 attack categories
+- ✅ **Real-time performance testing** with live ROS integration
+- ✅ **Comprehensive documentation** and usage guides
 
-# Milestone #2
-- CICFlowMeter working in Ubuntu to see real life incoming traffic
-- Export models created in NavBot25
-- Validating the data of models
+---
 
-# Milestone #3
-- 
+## 🚀 Project Status: **FULLY COMPLETED** 
+
+### Final Deliverables:
+- **5 trained ML/DL models** for intrusion detection
+- **Complete ROS integration** with real-time monitoring
+- **Comprehensive dataset** with labeled attack scenarios  
+- **Production-ready IDS system** for autonomous robots
+- **Open-source codebase** with detailed documentation
+- **Research contribution** to ROS security community
+
+### Impact & Contributions:
+- 🔍 **Security gap analysis** for ROS-based systems
+- 📡 **Open dataset contribution** for research community
+- 🧠 **Novel deep learning approaches** for robot security
+- 📊 **Reproducible methodology** with complete code/data
+- 🔐 **Real-world deployment** capability for production systems

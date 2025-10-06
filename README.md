@@ -9,11 +9,12 @@ As autonomous systems become increasingly prevalent across sectors such as healt
 ## 🧠 Key Features
 
 - **Real-time Anomaly Detection** for ROS-based autonomous systems
-- **ML-powered Classification** using Random Forest, Decision Trees, and KNN algorithms
+- **ML-powered Classification** using Deep Learning (CNN-LSTM, CNN-MHA) and traditional algorithms
 - **Comprehensive Attack Simulation** including DoS, MitM, unauthorized access, and topic flooding
 - **Open Dataset Generation** from real-world robot traffic with labeled attack scenarios
-- **Multi-algorithm Support** with performance comparison and optimization
-- **Feature Engineering Pipeline** using 76+ network traffic characteristics
+- **Multi-algorithm Support** with deep learning and traditional ML approaches  
+- **Feature Engineering Pipeline** using 78+ network traffic characteristics
+- **Real-time ROS Integration** with live threat detection and alerting
 - Support for **ROS 1** environments (ROS 2 compatibility planned)
 
 ---
@@ -88,19 +89,20 @@ ros-security/
 ├── README.md                    # Project overview and documentation
 ├── codes/                       # ROS implementation and runtime scripts
 │   └── ids_node.py             # Real-time IDS ROS node for live detection
-├── dataset/                     # Dataset and validation tools
-│   ├── datasetvalidation.ipynb # Data preprocessing and validation
-│   ├── test.py                  # Model testing and prediction script
+├── dataset/                     # Dataset and trained models
 │   ├── existing/                # External dataset references
-│   └── models/                  # Trained ML models and notebooks
-│       ├── ac-mi-rf/           # Random Forest implementation
-│       │   ├── acmirf.ipynb    # Complete RF training pipeline
-│       │   ├── model.joblib    # Trained Random Forest model
-│       │   ├── scaler.joblib   # Data preprocessing scaler
-│       │   └── features.txt    # Feature definitions (76 features)
-│       ├── navbot25_ac_mi_knn.ipynb  # K-Nearest Neighbors model
-│       ├── navbot25-ac-mi-dt.ipynb   # Decision Tree model
-│       └── navbot25-ac-mi-rf.ipynb   # Random Forest model
+│   └── models/                  # Trained ML/DL models and notebooks
+│       ├── ac-cnn-lstm/        # CNN-LSTM Deep Learning IDS (Primary)
+│       │   ├── model.joblib    # Trained hybrid model
+│       │   ├── scaler.joblib   # Feature preprocessing
+│       │   └── features.txt    # Feature definitions
+│       ├── ac-cnn-mha/         # CNN Multi-Head Attention IDS (Primary)  
+│       │   ├── cnn_mha_model.keras # Trained CNN-MHA model
+│       │   ├── feature_extractor.keras # Feature extraction model
+│       │   └── pipeline_info.json # Model pipeline configuration
+│       ├── ac-mi-rf/           # Random Forest (Experimental)
+│       ├── ac-mi-knn/          # K-Nearest Neighbors (Experimental)
+│       └── ac-mi-dt/           # Decision Tree (Experimental)
 ├── doc/                         # Documentation and setup guides
 │   ├── README.md               # CICFlowMeter installation guide
 │   └── ROS TB3 and RGBD.pdf    # Hardware setup documentation
@@ -315,15 +317,19 @@ sudo cicflowmeter -i wlp0s20f3 -c /home/jakelcj/output.csv
 
 | Model Type           | Status      | Accuracy | Features Used | Implementation |
 |---------------------|-------------|----------|---------------|----------------|
-| **Random Forest**   | ✅ Complete | ~95%     | 63/76         | `ac-mi-rf/`    |
-| **Decision Tree**   | 🔄 Training | TBD      | 76            | `navbot25-ac-mi-dt.ipynb` |
-| **K-Nearest Neighbors** | 🔄 Training | TBD   | 76            | `navbot25_ac_mi_knn.ipynb` |
+| **CNN-LSTM** (Primary)   | ✅ Complete | 98.78%   | Deep features | `ac-cnn-lstm/` |
+| **CNN-MHA** (Primary)    | ✅ Complete | 98.10%   | 78→64→16 pipeline | `ac-cnn-mha/` |
+| **Random Forest**        | ✅ Experimental | Research | 63/78 | `ac-mi-rf/`    |
+| **Decision Tree**        | ✅ Experimental | Research | MI selected | `ac-mi-dt/` |
+| **K-Nearest Neighbors**  | ✅ Experimental | Research | 62/78 | `ac-mi-knn/` |
 
 ### Feature Engineering
-- **76 Network Traffic Features** extracted using CICFlowMeter
+- **78 Network Traffic Features** extracted using CICFlowMeter
+- **Deep Learning Pipeline**: CNN-MHA feature extraction (78→64→16)
 - **Statistical Analysis**: Flow duration, packet sizes, inter-arrival times
 - **Protocol Features**: TCP flags, header lengths, window sizes  
 - **Behavioral Patterns**: Active/idle times, up/down ratios
+- **Attack Classification**: 8 attack types including DoS, MitM, Port Scanning
 
 ---
 
@@ -374,4 +380,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **TurtleBot3** team for excellent robotic platform
 - **ROS Community** for comprehensive robotics framework
 - **CICFlowMeter** developers for network traffic analysis tools
-- **Open5GS & UERANSIM** projects for inspiration in network simulation approaches

@@ -1,8 +1,16 @@
-# Documentation for this repo
+# 📚 ROS-Guard Documentation
 
-I will be uploading what I have used in this project for reusability.
+This directory contains technical documentation and setup guides for the ROS-Guard intrusion detection system.
 
-# CICFlowMeter Installation on Ubuntu
+## 📋 Contents
+
+- **CICFlowMeter Installation Guide** - Network traffic feature extraction setup
+- **Hardware Setup Documentation** - TurtleBot3 and RGBD sensor configuration
+- **System Requirements** - Complete dependency and environment setup
+
+---
+
+# 🔧 CICFlowMeter Installation on Ubuntu
 
 This guide explains how to install and run **CICFlowMeter** on Ubuntu for network traffic feature extraction.  
 
@@ -49,16 +57,60 @@ This guide explains how to install and run **CICFlowMeter** on Ubuntu for networ
 ````bash
 sudo ./gradlew execute
 ````
-# How to use CICFlowMeter
-After running the last command, CICFlowMeter's GUI should be running. 
-The alternative way is through CLI, where the command is:
-````bash
-sudo cicflowmeter -i wlp0s20f3 -c /home/jakelcj/output.csv
-````
-sudo cicflowmeter -i [interface] -c [directory of csv file]
+---
 
-To confirm that it is working:
-````bash
+## 🚀 How to Use CICFlowMeter
+
+After successful installation, CICFlowMeter can be used in two modes:
+
+### 🖥️ GUI Mode (Offline Analysis)
+```bash
+sudo ./gradlew execute
+```
+- Use for analyzing existing PCAP files
+- Select input PCAP directory and output CSV location
+- Configure timeouts: Flow Timeout: `120000000`, Activity Timeout: `5000000`
+
+### ⚡ CLI Mode (Real-time Analysis)
+```bash
+sudo cicflowmeter -i wlp0s20f3 -c /home/jakelcj/output.csv
+```
+
+**Command Format:**
+```bash
+sudo cicflowmeter -i [network_interface] -c [output_csv_path]
+```
+
+**Verify Operation:**
+```bash
 head -n 5 /home/jakelcj/output.csv
-````
+```
+
+### 🔍 Integration with ROS-Guard IDS
+The extracted CSV features are automatically processed by the ROS IDS node (`ids_node.py`) for real-time intrusion detection.
+
+---
+
+## 📊 Feature Extraction Details
+
+CICFlowMeter extracts **78 network traffic features** including:
+- Flow duration and packet statistics
+- Inter-arrival times and flow rates  
+- TCP flag distributions
+- Packet size distributions
+- Protocol-specific features
+
+These features are then used by the machine learning models for attack classification.
+
+---
+
+## 🆘 Troubleshooting
+
+**Common Issues:**
+- **Java Version**: Ensure Java 8 is selected as default
+- **Permissions**: Run with `sudo` for network interface access
+- **Network Interface**: Use `ifconfig` to find correct interface name
+- **Dependencies**: Verify all packages are properly installed
+
+**For Additional Support:** See the main project README and model documentation in `/dataset/models/`
 
