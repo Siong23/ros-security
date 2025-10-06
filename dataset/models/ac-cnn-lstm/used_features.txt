@@ -1,6 +1,0 @@
-Pipeline: CNN+LSTM feature extractor -> PCA -> KNN+RF probability fusion -> LogisticRegression
-Model variable present: yes
-Final test accuracy: 0.9878261321957184
-CV mean accuracy: 0.99412108993952
-Fused training feature shape: (153770, 32)
-Fused testing feature shape: (38443, 32)

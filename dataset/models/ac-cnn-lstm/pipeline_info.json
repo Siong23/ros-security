@@ -1,31 +1,30 @@
 {
-  "pipeline_type": "CNN+LSTM Fusion Pipeline",
+  "pipeline_type": "CNN+LSTM with KNN+RF fusion and Logistic Regression",
+  "export_date": "2025-10-06T10:33:14.919694",
+  "feature_flow": "78 features -> CNN+LSTM -> 64 features -> PCA -> 16 features -> KNN+RF fusion -> 16 features -> LR -> 8 classes",
   "input_features": 78,
+  "cnn_lstm_output_dim": 64,
   "pca_components": 16,
+  "fusion_output_dim": 16,
   "num_classes": 8,
-  "final_features": 32,
-  "feature_breakdown": {
-    "pca_features": 16,
-    "knn_probabilities": 8,
-    "rf_probabilities": 8,
-    "total": 32
-  },
-  "transformation_steps": [
-    "1. Raw features (78) -> StandardScaler -> scaled features (78)",
-    "2. Scaled features (78) -> PCA -> pca features (16)",
-    "3. PCA features (16) -> KNN.predict_proba -> knn probabilities (8)",
-    "4. PCA features (16) -> RF.predict_proba -> rf probabilities (8)",
-    "5. Concatenate [pca_features, knn_proba, rf_proba] -> fused features (32)",
-    "6. Fused features (32) -> LogisticRegression -> final prediction"
+  "attack_classes": [
+    "Normal",
+    "DoS Attack",
+    "UnauthSub Attack",
+    "SSH Bruteforce",
+    "Pubflood",
+    "Subflood",
+    "Reverse Shell",
+    "Port Scanning Attack"
   ],
-  "attack_classes": {
-    "0": "Normal",
-    "1": "DoS Attack",
-    "2": "UnauthSub Attack",
-    "3": "SSH Bruteforce",
-    "4": "Pubflood",
-    "5": "Subflood",
-    "6": "Reverse Shell",
-    "7": "Port Scanning Attack"
-  }
+  "model_components": [
+    "scaler.joblib",
+    "feature_extractor.keras",
+    "pca.joblib",
+    "knn_classifier.joblib",
+    "rf_classifier.joblib",
+    "lr_classifier.joblib",
+    "features.txt",
+    "class_mapping.json"
+  ]
 }

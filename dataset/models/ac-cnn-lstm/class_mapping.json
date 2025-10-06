@@ -1,0 +1,10 @@
+{
+  "Normal": 0,
+  "DoS Attack": 1,
+  "UnauthSub Attack": 2,
+  "SSH Bruteforce": 3,
+  "Pubflood": 4,
+  "Subflood": 5,
+  "Reverse Shell": 6,
+  "Port Scanning Attack": 7
+}
