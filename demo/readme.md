@@ -100,15 +100,15 @@ cd attacks
 
 | Attack Script | Target | Primary Detection | Secondary Detection |
 |---------------|--------|------------------|-------------------|
-| **`Dos.py`** | `/cmd_vel` topic | **DoS Attack** | - |
-| **`Pubflood_attack.py 192.168.0.141`** | TurtleBot | **Pubflood** | - |
-| **`Pubflood_attack.py 192.168.0.142`** | Master | **DoS Pubflood** | - |
-| **`Unauth_publisher.py`** | ROS Topics | **Pubflood** | **DoS Attack** |
-| **`Unauthsub_attack.py 192.168.0.142`** | Master | **Pubflood, DoS** | **UnauthSub Attack** |
-| **`Port_scan.py 192.168.0.142`** | Master | **DoS, Pubflood** | **UnauthSub Attack** |
-| **`Subfloodmaybe.py`** | Subscriptions | **Pubflood/Subflood** | - |
-| **`Topicflooding.py`** | Topics | **Pubflood** | **(UnauthSub?)** |
-| **`V2pub_flood_sim.py`** | Publications | **Pubflood** | - |
+| **`dos.py`** | `/cmd_vel` topic | **DoS Attack** | - |
+| **`pubflood_attack.py 192.168.0.141`** | TurtleBot | **Pubflood** | - |
+| **`pubflood_attack.py 192.168.0.142`** | Master | **DoS Pubflood** | - |
+| **`unauth_publisher.py`** | ROS Topics | **Pubflood** | **DoS Attack** |
+| **`unauthsub_attack.py 192.168.0.142`** | Master | **Pubflood, DoS** | **UnauthSub Attack** |
+| **`port_scan.py 192.168.0.142`** | Master | **DoS, Pubflood** | **UnauthSub Attack** |
+| **`subandpubflood.py`** | Subscriptions/Publications | **Pubflood/Subflood** | - |
+| **`topicflooding.py`** | Topics | **Pubflood** | **(UnauthSub?)** |
+| **`v2pub_flood_sim.py`** | Publications | **Pubflood** | - |
 
 ### Demo Attack Sequence (Suggested):
 
