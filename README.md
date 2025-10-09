@@ -44,11 +44,11 @@ As autonomous systems become increasingly prevalent across sectors such as healt
 | +-------------+ |                                      |                 |
 |                 |                                      | +-------------+ |
 | +-------------+ |                                      | | ML Models   | |
-| | Navigation  | |                                      | | • Random    | |
-| | Stack       | |                                      | |   Forest    | |
-| | (SLAM)      | |                                      | | • Decision  | |
-| +-------------+ |                                      | |   Tree      | |
-+-----------------+                                      | | • KNN       | |
+| | Navigation  | |                                      | | • MHA    | |
+| | Stack       | |                                      | |       | |
+| | (SLAM)      | |                                      | |   | |
+| +-------------+ |                                      | |         | |
++-----------------+                                      | | • LSTM       | |
                                                          | +-------------+ |
                                                          |                 |
                                                          | +-------------+ |
