@@ -44,13 +44,10 @@ As autonomous systems become increasingly prevalent across sectors such as healt
 | +-------------+ |                                      |                 |
 |                 |                                      | +-------------+ |
 | +-------------+ |                                      | | ML Models   | |
-| | Navigation  | |                                      | | • MHA    | |
-| | Stack       | |                                      | |       | |
-| | (SLAM)      | |                                      | |   | |
-| +-------------+ |                                      | |         | |
-+-----------------+                                      | | • LSTM       | |
-                                                         | +-------------+ |
-                                                         |                 |
+| | Navigation  | |                                      | | • MHA       | |
+| | Stack       | |                                      | | • LSTM      | |
+| | (SLAM)      | |                                      | +-------------+ |                                     
++-----------------+                                      | |             | |
                                                          | +-------------+ |
                                                          | | Alert &     | |
                                                          | | Response    | |
